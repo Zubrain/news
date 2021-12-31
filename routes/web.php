@@ -21,5 +21,5 @@ use Illuminate\Support\Facades\Route;
 // })->where('id','[0-9]+');
 
 Route::get('/', function () {
-    return view('layouts.app');
+    return view('pages.index');
 });
