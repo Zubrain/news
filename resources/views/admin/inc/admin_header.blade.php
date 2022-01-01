@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('/back/assets/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('/back/assets/css/flag-icon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/back/assets/css/cs-skin-elastic.css') }}">
+    <link rel="stylesheet" href="{{ asset('/back/assets/css/lib/datatable/dataTables.bootstrap.min.css') }}">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" href="{{ asset('/back/assets/scss/style.css') }}">
     <link href="{{ asset('/back/assets/css/lib/vector-map/jqvmap.min.css') }}" rel="stylesheet">
