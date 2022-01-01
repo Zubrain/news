@@ -26,6 +26,8 @@ Route::get('/post','App\Http\Controllers\PagesController@post');
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/','App\Http\Controllers\Admin\DashboardController@index');
     Route::get('/category','App\Http\Controllers\Admin\CategoryController@index');
+    Route::get('/category/create','App\Http\Controllers\Admin\CategoryController@create');
+    Route::get('/category/edit','App\Http\Controllers\Admin\CategoryController@edit');
 });
 
 
