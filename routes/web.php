@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 //     return 'Your id is '.$id. " and your name is ".$name;
 // })->where('id','[0-9]+');
 
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/','App\Http\Controllers\PagesController@index');
+Route::get('/category','App\Http\Controllers\PagesController@category');
+Route::get('/post','App\Http\Controllers\PagesController@post');
+
