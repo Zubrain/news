@@ -23,4 +23,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','App\Http\Controllers\PagesController@index');
 Route::get('/category','App\Http\Controllers\PagesController@category');
 Route::get('/post','App\Http\Controllers\PagesController@post');
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/','App\Http\Controllers\Admin\DashboardController@index');
+});
+
 

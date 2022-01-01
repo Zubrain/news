@@ -16,4 +16,6 @@ class PagesController extends Controller
     public function post(){
         return view('pages.post');
     }
+
+    
 }
