@@ -15,7 +15,7 @@
                               <h3 class="text-center">Pay Invoice</h3>
                           </div>
                           <hr>
-                          <form action="" method="post" novalidate="novalidate">
+                          {!! Form::open(['url' => 'foo/bar', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                               <div class="form-group text-center">
                                   <ul class="list-inline">
                                       <li class="list-inline-item"><i class="text-muted fa fa-cc-visa fa-2x"></i></li>
@@ -25,8 +25,8 @@
                                   </ul>
                               </div>
                               <div class="form-group">
-                                  <label for="cc-payment" class="control-label mb-1">Payment amount</label>
-                                  <input id="cc-pament" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false" value="100.00">
+                                {{Form::label('cc-payment', 'Payment amount',  ['class' => 'control-label mb-1'])}}
+                                {{Form::text('cc-pament', '100.00', ['class' => 'form-control', 'placeholder' => 'Enter amount'])}}
                               </div>
                               <div class="form-group has-success">
                                   <label for="cc-name" class="control-label mb-1">Name on card</label>
@@ -65,7 +65,7 @@
                                       <span id="payment-button-sending" style="display:none;">Sending…</span>
                                   </button>
                               </div>
-                          </form>
+                          {!! Form::close() !!}
                       </div>
                   </div>
 

@@ -3,9 +3,11 @@
     <title>Sufee Admin - HTML5 Admin Template</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- favicon -->
+     <link href="{{ asset('/front/img/favicon.png') }}" rel=icon>
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    {{-- <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon.ico"> --}}
 
     <link rel="stylesheet" href="{{ asset('/back/assets/css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('/back/assets/css/bootstrap.min.css') }}">
