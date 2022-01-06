@@ -25,7 +25,7 @@ Route::get('/category','App\Http\Controllers\PagesController@category');
 Route::get('/post','App\Http\Controllers\PagesController@post');
 Route::get('/query','App\Http\Controllers\DbController@index');
 Route::get('/joining','App\Http\Controllers\DbController@join');
-Route::group(['prefix' => 'admin'], function(){
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/','App\Http\Controllers\Admin\DashboardController@index');
     Route::get('/category','App\Http\Controllers\Admin\CategoryController@index');
     Route::get('/category/create','App\Http\Controllers\Admin\CategoryController@create');
