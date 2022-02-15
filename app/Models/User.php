@@ -7,10 +7,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Shanmuga\LaravelEntrust\Traits\LaravelEntrustUserTrait;
+
+
+// class User extends Models
+// {
+//     use LaravelEntrustUserTrait; // add this trait to your user model
+
+// }
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    use LaravelEntrustUserTrait; // add this trait to your user model
 
     /**
      * The attributes that are mass assignable.
