@@ -30,6 +30,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/category','App\Http\Controllers\Admin\CategoryController@index');
     Route::get('/category/create','App\Http\Controllers\Admin\CategoryController@create');
     Route::get('/category/edit','App\Http\Controllers\Admin\CategoryController@edit');
+    Route::get('/permission','App\Http\Controllers\Admin\PermissionController@index');
+    Route::get('/permission/create','App\Http\Controllers\Admin\PermissionController@create');
+    Route::post('/permission/store','App\Http\Controllers\Admin\PermissionController@store');
 });
 
 
