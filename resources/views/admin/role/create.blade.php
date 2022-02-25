@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <strong class="card-title">{{ $page_name }}</strong>
+                    <strong class="card-title">Create Role Page</strong>
                 </div>
                 <div class="card-body">
                   <!-- Credit Card -->
@@ -22,7 +22,7 @@
                             </ul>
                         </div>
                           @endif
-                          {!! Form::model($permission, ['route' => ['permission-update', $permission->id], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
+                          {!! Form::open(['url' => 'admin/role/store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                               <div class="form-group">
                                 {{Form::label('name', 'Name',  ['class' => 'control-label mb-1'])}}
                                 {{Form::text('name', null, ['class' => 'form-control', 'id' => 'name'])}}
@@ -38,7 +38,7 @@
                               <div>
                                   <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                       <i class="fa fa-lock fa-lg"></i>&nbsp;
-                                      <span id="payment-button-amount">Update</span>
+                                      <span id="payment-button-amount">Submit</span>
                                       <span id="payment-button-sending" style="display:none;">Sending…</span>
                                   </button>
                               </div>

@@ -50,7 +50,7 @@ class PermissionController extends Controller
         $permission->display_name = $request->display_name;
         $permission->description = $request->description;
         $permission->save();
-        return redirect()->action('App\Http\Controllers\Admin\PermissionController@create')->with('success',"Permission Created Successfully");
+        return redirect()->action('App\Http\Controllers\Admin\PermissionController@index')->with('success',"Permission Created Successfully");
     }
 
     /**
@@ -72,7 +72,9 @@ class PermissionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $page_name = 'Permission Edit';
+        $permission = Permission::find($id);
+        return view('admin.permission.edit', compact('permission','page_name'));
     }
 
     /**
@@ -84,7 +86,19 @@ class PermissionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|alpha_num'
+        ], [
+            'name.required'=>"Name field is required",
+            'name.alpha_num'=>"Name field accepts alpha numeric characters"
+        ]);
+
+        $permission = Permission::find($id);
+        $permission->name = $request->name;
+        $permission->display_name = $request->display_name;
+        $permission->description = $request->description;
+        $permission->save();
+        return redirect()->action('App\Http\Controllers\Admin\PermissionController@index')->with('success',"Permission Updated Successfully");
     }
 
     /**
@@ -95,6 +109,8 @@ class PermissionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $permission = Permission::find($id);
+        $permission->delete();
+        return redirect()->action('App\Http\Controllers\Admin\PermissionController@index')->with('success',"Permission Deleted Successfully");
     }
 }

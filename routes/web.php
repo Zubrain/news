@@ -33,6 +33,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('/permission','App\Http\Controllers\Admin\PermissionController@index');
     Route::get('/permission/create','App\Http\Controllers\Admin\PermissionController@create');
     Route::post('/permission/store','App\Http\Controllers\Admin\PermissionController@store');
+    Route::get('/permission/edit/{id}',['uses'=>'App\Http\Controllers\Admin\PermissionController@edit', 'as'=>'permission-edit']);
+    Route::put('/permission/edit/{id}',['uses'=>'App\Http\Controllers\Admin\PermissionController@update', 'as'=>'permission-update']);
+    Route::delete('/permission/delete/{id}',['uses'=>'App\Http\Controllers\Admin\PermissionController@destroy', 'as'=>'permission-delete']);
+    Route::get('/role','App\Http\Controllers\Admin\RoleController@index');
+    Route::get('/role/create','App\Http\Controllers\Admin\RoleController@create');
+    Route::post('/role/store','App\Http\Controllers\Admin\RoleController@store');
+    Route::get('/role/edit/{id}',['uses'=>'App\Http\Controllers\Admin\RoleController@edit', 'as'=>'role-edit']);
+    Route::put('/role/edit/{id}',['uses'=>'App\Http\Controllers\Admin\RoleController@update', 'as'=>'role-update']);
+    Route::delete('/role/delete/{id}',['uses'=>'App\Http\Controllers\Admin\RoleController@destroy', 'as'=>'role-delete']);
 });
 
 

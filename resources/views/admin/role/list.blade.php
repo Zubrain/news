@@ -36,7 +36,7 @@
             <div class="card">
                 <div class="card-header">
                     <strong class="card-title">{{ $page_name }}</strong>
-                    <a href="{{ url('/admin/permission/create') }}" class="btn btn-primary rounded pull-right">Create</a>
+                    <a href="{{ url('/admin/role/create') }}" class="btn btn-primary rounded pull-right">Create</a>
                 </div>
                 <div class="card-body">
           <table id="bootstrap-data-table" class="table table-striped table-bordered">
@@ -57,8 +57,8 @@
                 <td>{{ $row->display_name }}</td>
                 <td>{{ $row->description }}</td>
                 <td>
-                  <a href="{{ url('/admin/permission/edit/'.$row->id) }}" class="btn btn-primary rounded">Edit</a>
-                  {!! Form::open(['method'=>'DELETE','url'=>['/admin/permission/delete/'.$row->id],'style'=>'display:inline' ]) !!}
+                  <a href="{{ url('/admin/role/edit/'.$row->id) }}" class="btn btn-primary rounded">Edit</a>
+                  {!! Form::open(['method'=>'DELETE','url'=>['/admin/role/delete/'.$row->id],'style'=>'display:inline' ]) !!}
                   {!! Form::submit('Delete',['class'=>'btn btn-danger']) !!}
                   {!! Form::close() !!}
                 </td>
